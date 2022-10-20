@@ -22,7 +22,8 @@ Any tool can be choosen, I fixed on some traditional tools, which I would use my
 #### zsh 
 
 ##### Dependencies
-`libncurses-dev`
+- Toolchain: `gcc git make autoconf`
+- Development files: `libncurses-dev` 
 
 ```sh
 # information about the process can be found in INSTALL
@@ -33,6 +34,7 @@ git clone git://git.code.sf.net/p/zsh/code zsh
 make
 make check 
 
+# find the binary in ./Src/zsh
 # make install
 ```
 
