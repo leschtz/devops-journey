@@ -22,11 +22,16 @@
     - [Learning Goals](#learning-goals-3)
     - [Useful Tools](#useful-tools-2)
     - [Next Steps/Further Improvements](#next-stepsfurther-improvements-2)
-  - [Project Template](#project-template)
+  - [Create multiple webservers and hide them behinde a load balancer](#create-multiple-webservers-and-hide-them-behinde-a-load-balancer)
     - [Steps](#steps-4)
     - [Learning Goals](#learning-goals-4)
     - [Useful Tools](#useful-tools-3)
     - [Next Steps/Further Improvements](#next-stepsfurther-improvements-3)
+  - [Project Template](#project-template)
+    - [Steps](#steps-5)
+    - [Learning Goals](#learning-goals-5)
+    - [Useful Tools](#useful-tools-4)
+    - [Next Steps/Further Improvements](#next-stepsfurther-improvements-4)
 
 
 ## Template
@@ -143,7 +148,6 @@ This task is also regularly suggested on [reddit.com/r/devops](https://reddit.co
   - Introduce faulty HTML
   - Make some JS fail
 
-
 ## Create a REST API and use a database for storage
 
 The user creates a REST API, which then goes on to store data in some database. The database and webservice should not be on hosted on the same machine. Enable the service to deploy new changes to the API automatically. Check that you do not introduce any breaking changes. Remove the DB Service and see how your service reacts.
@@ -177,6 +181,38 @@ The user creates a REST API, which then goes on to store data in some database. 
 - Deploy the DB and the API in different regions
 - Make the DB inaccesible from the outside, it only should connect to the webservice directly.
   
+## Create multiple webservers and hide them behinde a load balancer 
+
+Easy as that. Create multiple Linux instances, configure them to use 
+
+### Steps
+
+1. Create a template for the Instances
+2. Spawn many Instances and configure their network
+3. Automatically install the webservice on the machines
+4. Set some correct domains, to be able to resolve the machines
+5. Setup the loadbalancer 
+ 
+### Learning Goals
+
+- Configure many systems exactly the same
+- Create a redundant system
+
+### Useful Tools
+
+- Virtualization: KVM, Docker, Virtualbox
+- Configuration: Ansible, Puppet
+- Webserver: nginx, Apache
+
+### Next Steps/Further Improvements
+
+- Configure a firewall to keep your instances more secure
+  - Only allow a certain IP range to access the instances via SSH
+- Deploy the webservers on different Linux distributions
+- Mix Docker machines with VMs as webservers
+- What happens if you remove a machine? How does the loadbalancer handle this?
+- What Software can you choose for load balancing?
+- Do Cloud Providers have load balancers available?
 
 ## Project Template
 
