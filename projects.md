@@ -17,9 +17,32 @@ The goal here is, that I create an cloud instance when needed, to create the bin
    - test it on the bare-bone machine
 
 ### What tool to compile?
-- git
-- zsh
-- zlib
+Any tool can be choosen, I fixed on some traditional tools, which I would use myself, where documentation is provided.
+
+#### zsh 
+
+##### Dependencies
+`libncurses-dev`
+
+```sh
+# information about the process can be found in INSTALL
+git clone git://git.code.sf.net/p/zsh/code zsh
+./Util/preconfig
+./configure --disable-dynamic # create a standalone binary
+
+make
+make check 
+
+# make install
+```
+
+
+#### zlib
+
+#### git
+
+##### Dependencies
+`libssl-dev`, `autoconf`, `libcurl4-openssl-dev`
 
 ### Learning Goals
 - how to create an instance programmatically
@@ -30,4 +53,5 @@ The goal here is, that I create an cloud instance when needed, to create the bin
 
 ### Further Steps
 - create the instance via an "Infrastructure as Service (IaC)" tool
-- 
+- seperate the steps into a pipeline, to see which stage is failing
+- introduce some error checking in the process
