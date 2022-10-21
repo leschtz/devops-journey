@@ -1,6 +1,6 @@
 # Projects
 - [Projects](#projects)
-  - [Compile a tool on a cloud based instance and provide the binary](#compile-a-tool-on-a-cloud-based-instance-and-provide-the-binary)
+  - [Build Step of a Pipeline](#build-step-of-a-pipeline)
     - [Steps](#steps)
     - [What tool to compile?](#what-tool-to-compile)
       - [zsh](#zsh)
@@ -8,21 +8,21 @@
     - [Learning Goals](#learning-goals)
     - [Useful Tools](#useful-tools)
     - [Next Steps/Further Improvements](#next-stepsfurther-improvements)
-  - [Create a simple pipeline for Frontend Development](#create-a-simple-pipeline-for-frontend-development)
+  - [Create a Simple Pipeline for Frontend Development & Deployment](#create-a-simple-pipeline-for-frontend-development--deployment)
     - [Steps](#steps-1)
     - [Learning Goals](#learning-goals-1)
     - [Further Improvements](#further-improvements)
-  - [Create a REST API and use a database for storage](#create-a-rest-api-and-use-a-database-for-storage)
+  - [Create a REST API and use a Database for Storage](#create-a-rest-api-and-use-a-database-for-storage)
     - [Steps](#steps-2)
     - [Learning Goals](#learning-goals-2)
     - [Useful Tools](#useful-tools-1)
     - [Next Steps/Further Improvements](#next-stepsfurther-improvements-1)
-  - [Create multiple webservers and hide them behinde a load balancer](#create-multiple-webservers-and-hide-them-behinde-a-load-balancer)
+  - [Create Multiple Webservers and Hide them Behind a Load Balancer](#create-multiple-webservers-and-hide-them-behind-a-load-balancer)
     - [Steps](#steps-3)
     - [Learning Goals](#learning-goals-3)
     - [Useful Tools](#useful-tools-2)
     - [Next Steps/Further Improvements](#next-stepsfurther-improvements-2)
-  - [Handle Version Differences](#handle-version-differences)
+  - [Handle Version Difference](#handle-version-difference)
     - [Steps](#steps-4)
     - [Learning Goals](#learning-goals-4)
     - [Useful Tools](#useful-tools-3)
@@ -33,7 +33,7 @@
     - [Useful Tools](#useful-tools-4)
     - [Next Steps/Further Improvements](#next-stepsfurther-improvements-4)
 
-## Compile a tool on a cloud based instance and provide the binary
+## Build Step of a Pipeline
 
 The goal here is, that I create an cloud instance when needed, purely to compile some software.
 Creating the infrastructure should be done in a bare method, purely with a scripting language. The advantage I see by doing it this way is, that Terraform or similar tools work similarly and abstract a level away. However, by being familiar with some essential tools, I can learn a lot. 
@@ -97,7 +97,7 @@ make check
   - Boto3
 
 
-## Create a simple pipeline for Frontend Development
+## Create a Simple Pipeline for Frontend Development & Deployment
 
 For this task, setup the revision control system, when checked-in, the pipeline is setup to deploy the website.
 This task is similar to the [Cloud Resume Challenge](https://cloudresumechallenge.dev), however in this case, there should be no backend.
@@ -128,7 +128,7 @@ This task is also regularly suggested on [reddit.com/r/devops](https://reddit.co
   - Introduce faulty HTML
   - Make some JS fail
 
-## Create a REST API and use a database for storage
+## Create a REST API and use a Database for Storage
 
 The user creates a REST API, which then goes on to store data in some database. The database and webservice should not be on hosted on the same machine. Enable the service to deploy new changes to the API automatically. Check that you do not introduce any breaking changes. Remove the DB Service and see how your service reacts.
 
@@ -161,7 +161,7 @@ The user creates a REST API, which then goes on to store data in some database. 
 - Deploy the DB and the API in different regions
 - Make the DB inaccesible from the outside, it only should connect to the webservice directly.
   
-## Create multiple webservers and hide them behinde a load balancer 
+## Create Multiple Webservers and Hide them Behind a Load Balancer 
 
 Easy as that. Create multiple Linux instances, configure them to use 
 
@@ -194,7 +194,7 @@ Easy as that. Create multiple Linux instances, configure them to use
 - What Software can you choose for load balancing?
 - Do Cloud Providers have load balancers available?
 
-## Handle Version Differences
+## Handle Version Difference
 
 Creating software may needs to be compatible with different versions, standards or operating systems. There the goal is to provide a matrix pipeline, running on different OS and different versions for the interpreter/compiler
 
