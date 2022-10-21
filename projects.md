@@ -1,28 +1,28 @@
 # Projects
 - [Projects](#projects)
-  - [Template](#template)
-    - [Steps](#steps)
-    - [Learning Goals](#learning-goals)
-    - [Useful Tools](#useful-tools)
-    - [Next Steps/Further Improvements](#next-stepsfurther-improvements)
   - [Compile a tool on a cloud based instance and provide the binary](#compile-a-tool-on-a-cloud-based-instance-and-provide-the-binary)
-    - [Steps](#steps-1)
+    - [Steps](#steps)
     - [What tool to compile?](#what-tool-to-compile)
       - [zsh](#zsh)
         - [Dependencies](#dependencies)
-    - [Learning Goals](#learning-goals-1)
-    - [Useful Tools](#useful-tools-1)
-    - [Next Steps/Further Improvements](#next-stepsfurther-improvements-1)
+    - [Learning Goals](#learning-goals)
+    - [Useful Tools](#useful-tools)
+    - [Next Steps/Further Improvements](#next-stepsfurther-improvements)
   - [Create a simple pipeline for Frontend Development](#create-a-simple-pipeline-for-frontend-development)
-    - [Steps](#steps-2)
-    - [Learning Goals](#learning-goals-2)
+    - [Steps](#steps-1)
+    - [Learning Goals](#learning-goals-1)
     - [Further Improvements](#further-improvements)
   - [Create a REST API and use a database for storage](#create-a-rest-api-and-use-a-database-for-storage)
+    - [Steps](#steps-2)
+    - [Learning Goals](#learning-goals-2)
+    - [Useful Tools](#useful-tools-1)
+    - [Next Steps/Further Improvements](#next-stepsfurther-improvements-1)
+  - [Create multiple webservers and hide them behinde a load balancer](#create-multiple-webservers-and-hide-them-behinde-a-load-balancer)
     - [Steps](#steps-3)
     - [Learning Goals](#learning-goals-3)
     - [Useful Tools](#useful-tools-2)
     - [Next Steps/Further Improvements](#next-stepsfurther-improvements-2)
-  - [Create multiple webservers and hide them behinde a load balancer](#create-multiple-webservers-and-hide-them-behinde-a-load-balancer)
+  - [Handle Version Differences](#handle-version-differences)
     - [Steps](#steps-4)
     - [Learning Goals](#learning-goals-4)
     - [Useful Tools](#useful-tools-3)
@@ -32,28 +32,6 @@
     - [Learning Goals](#learning-goals-5)
     - [Useful Tools](#useful-tools-4)
     - [Next Steps/Further Improvements](#next-stepsfurther-improvements-4)
-
-
-## Template
-
-- todo: describe the general idea of this task
-
-### Steps
-
-- todo: highlight the most important steps for this project
-
-### Learning Goals
-
-- todo: describe the learning outcome when this task is implemented
-
-### Useful Tools
-
-- todo: describe what tools can be used here. Think of Github, Scripting Languages, Frameworks, Cloud Providers, ....
-
-### Next Steps/Further Improvements
-
-- todo: describe how this project could be improved additionally
-
 
 ## Compile a tool on a cloud based instance and provide the binary
 
@@ -115,6 +93,8 @@ make check
 - Create the instance via an "Infrastructure as Service (IaC)" tool
 - Seperate the steps into a pipeline, to see which stage is failing
 - Introduce better error handling
+- Implement the solution via a programming API
+  - Boto3
 
 
 ## Create a simple pipeline for Frontend Development
@@ -213,6 +193,35 @@ Easy as that. Create multiple Linux instances, configure them to use
 - What happens if you remove a machine? How does the loadbalancer handle this?
 - What Software can you choose for load balancing?
 - Do Cloud Providers have load balancers available?
+
+## Handle Version Differences
+
+Creating software may needs to be compatible with different versions, standards or operating systems. There the goal is to provide a matrix pipeline, running on different OS and different versions for the interpreter/compiler
+
+### Steps
+
+- Create some software, which works with one version for a tool
+- Create a pipeline for this single version
+- Introduce antother change, which may be available with another version
+- Update the pipeline to run additional version
+- See how it breaks
+- Repair.
+
+### Learning Goals
+
+- How to handle different versions of some software tool
+- Matrix-Pipelines
+
+### Useful Tools
+
+- Python3.6 .. Python3.10 as an interpreter
+- Ubuntu 22.04, Ubuntu 18.10, ...
+
+### Next Steps/Further Improvements
+
+- Include a Framework, which you did not create, which introduced breaking changes
+- Handle different Operating Systems, Linux AND Windows.
+  - Think of file handling/directory names and restrictions to introduce issues
 
 ## Project Template
 
