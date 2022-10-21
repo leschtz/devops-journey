@@ -31,6 +31,7 @@ Terraform can also use paths to resolve the `ACCESS_KEY_ID` and `SECRET_ACCESS_K
 - How is `terraform destroy` handled with multiple resources?
 - What is a `state` in terraform speech?
 - Which Terraform files need to be commit?
+- What is the difference between `~>` and `=>`
 
 
 ## Lessons Learned
@@ -39,6 +40,7 @@ Terraform can also use paths to resolve the `ACCESS_KEY_ID` and `SECRET_ACCESS_K
 - `aws` will fail the `apply` step, when there is a space character in `ami = "this_is_the_ami "` like here at the end. 
 - `terraform apply -auto-approve` to remove interactive step
 - `terraform plan` is the dry-run version of `terraform apply`, variables can be set via both and the plan can be seen as is.
+- Terraform recommends **AGAINST** using provisioners. Use a different tool to handle configuration of the infrastructure.
 
 ## Links
 
