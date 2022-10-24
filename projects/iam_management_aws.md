@@ -8,7 +8,7 @@ Create a new User via an API, which can be used for automation tasks.
 ## Learning Goals
 
 - Work with Identity and Access Management
-- Learn about Least-Resources Principles
+- Learn about Least-privilege Principles
 
 ## Learnable Technology
 
