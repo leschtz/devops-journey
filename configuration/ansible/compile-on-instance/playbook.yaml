@@ -1,0 +1,41 @@
+- name: Install Dependencies
+  hosts: buildserver
+  tasks:
+    - name: Development Tools
+      become: yes
+      ansible.builtin.apt:
+        update_cache: yes
+        state: latest
+        pkg:
+          - git
+          - gcc
+          - autoconf
+          - make
+    - name: Development Libraries
+      become: yes
+      ansible.builtin.apt:
+        cache_valid_time: 3600
+        pkg:
+          - libncurses-dev
+    - name: Download Package
+      ansible.builtin.git:
+        repo: "git://git.code.sf.net/p/zsh/code"
+        dest: /tmp/zsh
+        version: master
+
+    - name: Preconfigure
+      ansible.builtin.command:
+        cmd: ./Util/preconfig
+        chdir: /tmp/zsh
+
+    - name: Configure
+      ansible.builtin.command:
+        cmd: ./configure --disable-dynamic
+        chdir: /tmp/zsh
+        creates: Makefile
+
+    - name: Compile
+      ansible.builtin.command:
+        cmd: make
+        chdir: /tmp/zsh
+        creates: Src/zsh

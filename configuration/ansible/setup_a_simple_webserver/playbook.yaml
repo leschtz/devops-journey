@@ -1,0 +1,19 @@
+- name: My first play
+  hosts: webserver
+  tasks:
+    - name: Ping hosts
+      ansible.builtin.ping:
+    - name: Print message
+      ansible.builtin.debug:
+        msg: hello world
+
+- name: install webserver
+  hosts: test01
+  tasks:
+    - name: install nginx
+      tags: nginx
+      become: yes
+      ansible.builtin.apt:
+        update_cache: yes
+        state: latest
+        name: nginx
