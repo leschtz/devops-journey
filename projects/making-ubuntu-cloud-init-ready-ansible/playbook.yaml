@@ -1,0 +1,17 @@
+- name: Install Dependencies
+  hosts: develop
+  tasks:
+    - name: Cloud Init Tools
+      become: yes
+      ansible.builtin.apt:
+        update_cache: yes
+        state: latest
+        pkg:
+          - qemu
+          - qemu-kvm
+          - libvirt-daemon
+          - libvirt-clients
+          - bridge-utils
+          - virt-manager
+          - cloud-image-utils
+          - libguestfs-tools

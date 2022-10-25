@@ -1,0 +1,5 @@
+all:
+  hosts:
+    cloud-init:
+      ansible_host: 192.0.2.50
+      ansible_user: ubuntu
