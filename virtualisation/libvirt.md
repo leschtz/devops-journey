@@ -27,6 +27,16 @@ virsh start $CLONED_VM_NAME
 virsh resume $VM_TO_CLONE 
 ```
 
+### Snapshots
+
+```sh
+virsh snapshot-create-as --domain $IMAGE --name $SNAPSHOT_NAME
+virsh snapshot-list $IMAGE
+virsh snapshot-revert $IMAGE $SNAPSHOT_NAME
+virsh snapshot-delete --domain $IMAGE --snapshotname $SNAPSHOT_NAME
+```
+
+###
 
 ## Links
 
