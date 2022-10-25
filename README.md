@@ -25,7 +25,7 @@ With the job postings I have been looking at, the following Stack is the most im
 Something I have not yet decided, is what services I am going to learn. Important to me is, that I don't have to pay money, therefor my learning experience is limited by AWS Free Tier. However, with EC2 Instances, Databases and Lambda services, many things are provided to learn.
 
 ### CI/CD
-For pipelines, I have read about Github Actions, Gitlab CI, Jenkins (which I am familiar with already), Azure DevOps, Argus CI, Keptn and more. Here I will focus on Github Actions, as it integrates well with the repository and it enables me to deploy my own runners. 
+For pipelines, I have read about Github Actions, Gitlab CI, Jenkins (which I am familiar with already), Azure DevOps, ArgoCD, Keptn and more. Here I will focus on Github Actions, as it integrates well with the repository and it enables me to deploy my own runners. 
 
 ### Kubernetes
 Kubernetes is a tool I do not fully understand yet. What I have grasped so far is, that there is `k8s`, which seems to be standard and a fully-fledged solution. `Helm` is a tool to control and manage Kubernetes Clusters. For learning purpose, I will try to setup a cluster with `k3s`, which is a Kubernetes distribution, suited for a lower footprint. 
@@ -39,7 +39,7 @@ Virtualization and Containers are not my main focus, however those are essential
 
 #### Conclusion
 
-While many different tools exist, I try to focus on these, I have read the most about those. 
+While many different tools exist, I try to focus on those listed above.
 
 ## Support 
 
