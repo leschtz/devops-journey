@@ -1,15 +1,7 @@
-- name: My first play
+- name: install webserver
   hosts: webserver
   tasks:
-    - name: Ping hosts
-      ansible.builtin.ping:
-    - name: Print message
-      ansible.builtin.debug:
-        msg: hello world
-
-- name: install webserver
-  hosts: test01
-  tasks:
+    # todo: compile from source
     - name: install nginx
       tags: nginx
       become: yes
@@ -17,3 +9,26 @@
         update_cache: yes
         state: latest
         name: nginx
+    # todo: create a dedicated user with network access 
+    # todo: copy an appropriate configuration there
+    - name: copy new webpage
+      become: yes
+      ansible.builtin.copy:
+        src: ./html/index.html
+        dest: /var/www/html/ansible.html
+        backup: yes
+    # copy new config
+    # test new config
+
+    - name: restart nginx
+      become: yes
+      service:
+        name: nginx
+        state: started
+
+      
+
+
+
+
+
